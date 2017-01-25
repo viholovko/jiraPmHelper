@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="132.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boostsolutions.jiraservice.MainApp">
+    <children>
+        <Button layoutX="15.0" layoutY="89.0" onAction="#analize" prefHeight="25.0" prefWidth="110.0" text="Select file" />
+      <TextField fx:id="account" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="244.0" promptText="Account" />
+      <PasswordField fx:id="password" layoutX="14.0" layoutY="49.0" prefHeight="25.0" prefWidth="244.0" promptText="Password" />
+      <ComboBox fx:id="projectsComboBox" layoutX="276.0" layoutY="14.0" prefHeight="25.0" prefWidth="174.0" />
+    </children>
+</AnchorPane>

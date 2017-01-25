@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<VBox fx:id="pointDetailVbox" spacing="5.0" stylesheets="@../styles/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.uzhhorodteam.apartmentcalculator.controllers.FirstDialogController">
+    <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Прізвище, ім'я, по батькові" GridPane.rowIndex="1" />
+            <TextField fx:id="fioTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Адреса" GridPane.rowIndex="2" />
+            <TextField fx:id="addressTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Квадратура" GridPane.rowIndex="6" />
+            <TextField fx:id="squareTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Поверх" GridPane.rowIndex="4" />
+            <ComboBox fx:id="florComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Близькість до центру" GridPane.rowIndex="5" />
+            <ComboBox fx:id="positionComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="центр" />
+                        <String fx:value="середина" />
+                        <String fx:value="периферія" />
+                    </FXCollections>
+                </items>
+                <value>
+                    <String fx:value="центр" />
+                </value>
+            </ComboBox>
+            <Label fx:id="calculationLabel" styleClass="title" text="0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label styleClass="title" text="Сума:" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label text="Назва" />
+            <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
+            <Label text="Кількість кімнат" GridPane.rowIndex="3" />
+            <TextField fx:id="roomsTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+        <HBox spacing="5.0">
+            <children>
+            <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="addButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveDataToDatabase" text="Примінити">
+                    <tooltip>
+                        <Tooltip text="Задіяти" />
+                    </tooltip>
+                    <graphic>
+                        <ImageView>
+                            <image>
+                                <Image url="@../images/ok.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="closeButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#close" text="Закрити">
+                    <tooltip>
+                        <Tooltip text="Закрити вікно" />
+                    </tooltip>
+                    <graphic>
+                        <ImageView>
+                            <image>
+                                <Image url="@../images/close.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </HBox>
+    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

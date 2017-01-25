@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<BorderPane minHeight="-Infinity" prefHeight="400.0" prefWidth="715.0" styleClass="root" stylesheets="@../styles/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boostsolutions.jiraservice.controller.MainPageController">
+    <center>
+        <VBox prefHeight="467.0" prefWidth="893.0">
+            <children>
+                <TabPane styleClass="tab" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="firstMarketTab" text="Projects &amp; Sprints">
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <TableView fx:id="projectTable" prefHeight="312.0" prefWidth="296.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="projectNameColumn" minWidth="60.0" prefWidth="160.0" text="Project Name" />
+                                                        <TableColumn fx:id="projectIdColumn" minWidth="100.0" prefWidth="100.0" text="ProjectId" />
+                                                    </columns>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="10.0" top="5.0" />
+                                       </HBox.margin>
+                                                </TableView>
+                                    <VBox layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <Button fx:id="addFirstStageButton1" mnemonicParsing="false" onAction="#addNewSprint">
+                                             <graphic>
+                                                <ImageView>
+                                                   <image>
+                                                      <Image url="@../images/increase.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Додати поверх" />
+                                             </tooltip>
+                                          </Button>
+                                          <Button fx:id="editFirstStageButton1" mnemonicParsing="false" onAction="#showSprints">
+                                             <graphic>
+                                                <ImageView>
+                                                   <image>
+                                                      <Image url="@../images/forward_2.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Редагувати запис" />
+                                             </tooltip>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                    <TableView fx:id="sprintTable" layoutX="10.0" layoutY="10.0" prefHeight="312.0" prefWidth="296.0">
+                                       <columns>
+                                          <TableColumn fx:id="sprintNameColumn" minWidth="60.0" prefWidth="160.0" text="Sprint Name" />
+                                          <TableColumn fx:id="sprintStatusColumn" minWidth="100.0" prefWidth="100.0" text="Status" />
+                                       </columns>
+                                    </TableView>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                                <!--<Button fx:id="saveFirstSettings" mnemonicParsing="false" onAction="#updateFirstSettings" text="Зберегти">-->
+                                                <Button fx:id="synchronizeButton" mnemonicParsing="false" onAction="#synchronizeDataBase" text="Sycnhronize">
+                                                    <tooltip>
+                                                        <Tooltip text="Зберегти налаштування" />
+                                                    </tooltip>
+                                                    <graphic>
+                                                        <ImageView>
+                                                            <image>
+                                                                <Image url="@../images/isync.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                    <ProgressIndicator fx:id="progressBar" disable="true" prefHeight="32.0" prefWidth="30.0" progress="0.0" visible="false">
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </ProgressIndicator>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                  <Tab fx:id="firstMarketTab1" text="Data Transport">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <TableView fx:id="projectTable1" prefHeight="296.0" prefWidth="698.0">
+                                       <columns>
+                                          <TableColumn fx:id="projectNameColumn1" minWidth="60.0" prefWidth="160.0" text="Project Name" />
+                                          <TableColumn fx:id="projectIdColumn1" minWidth="100.0" prefWidth="100.0" text="ProjectId" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="10.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <VBox layoutX="10.0" layoutY="10.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="715.0">
+                                 <children>
+                                    <ProgressIndicator fx:id="progressBar1" disable="true" prefHeight="32.0" prefWidth="30.0" progress="0.0" visible="false">
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </ProgressIndicator>
+                                    <Button fx:id="synchronizeButton1" mnemonicParsing="false" onAction="#openFile" text="Open File">
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../images/folder_open.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <tooltip>
+                                          <Tooltip text="Зберегти налаштування" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="synchronizeButton11" layoutX="40.0" layoutY="10.0" mnemonicParsing="false" onAction="#synchronizeDataBase" text="Sycnhronize">
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../images/document_export.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <tooltip>
+                                          <Tooltip text="Зберегти налаштування" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+    </center>
+    <top>
+        <MenuBar maxHeight="-Infinity" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Файл">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Вийти" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

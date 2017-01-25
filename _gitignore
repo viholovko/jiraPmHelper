@@ -1,0 +1,7 @@
+.idea
+out
+*.iml
+target
+Буде вилучено .gitignore
+Буде вилучено pom.xml
+Буде вилучено src/
